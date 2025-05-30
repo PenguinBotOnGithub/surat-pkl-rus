@@ -31,7 +31,7 @@ class LoginFormRequest extends FormRequest
     {
         return [
             'required' => 'Kolom :attribute belum terisi',
-            'exists' => 'Akun dengan username itu tidak ada'
+            'exists' => 'Akun dengan username itu tidak terdaftar'
         ];
     }
 }
