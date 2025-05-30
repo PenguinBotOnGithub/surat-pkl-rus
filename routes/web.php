@@ -12,7 +12,7 @@ Route::middleware('web')->group(
             }
             return redirect('/dashboard');
         });
-        Route::get('/login', [AuthController::class, 'loginWeb']);
+        Route::get('/login', [AuthController::class, 'loginWeb'])->name('login');
         Route::middleware('auth:sanctum')->group(function () {
             Route::inertia('/dashboard', 'Dashboard');
         });
