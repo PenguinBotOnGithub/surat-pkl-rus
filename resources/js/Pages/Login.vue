@@ -32,8 +32,8 @@
 import { getCSRFCookie, postLoginCredentials } from '../api/auth';
 import { ref } from 'vue';
 import { router, useForm } from '@inertiajs/vue3';
-import TextInput from '../Components/TextInput.vue';
-import PasswordInput from '../Components/PasswordInput.vue';
+import TextInput from '../Components/Inputs/TextInput.vue';
+import PasswordInput from '../Components/Inputs/PasswordInput.vue';
 
 const form = useForm({
     username: "",
