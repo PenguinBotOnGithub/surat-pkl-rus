@@ -18,20 +18,10 @@
             </div>
             <h1 class="mb-2 text-xl">Login</h1>
             <form class="flex flex-col gap-3" @submit.prevent="onSubmit">
-                <label for="username" class="floating-label">
-                    <span>Username</span>
-                    <input name="username"
-                        :class="[{ ['border-error']: form.errors.username != null }, 'input', 'w-sm', 'w-md', 'focus:outline-none', 'rounded-lg']"
-                        placeholder="Username" v-model="form.username" />
-                    <div class="text-error text-sm">{{ form.errors.username }}</div>
-                </label>
-                <label for="password" class="floating-label">
-                    <span>Password</span>
-                    <input name="password" placeholder="Password"
-                        :class="[{ ['border-error']: form.errors.password != null }, 'input', 'w-sm', 'w-md', 'focus:outline-none', 'rounded-lg']"
-                        v-model="form.password" type="password" />
-                    <div class="text-error text-sm">{{ form.errors.password }}</div>
-                </label>
+                <TextInput input-name="Username" input-placeholder="Username" v-model:input-value="form.username"
+                    v-model:input-error="form.errors.username" />
+                <PasswordInput input-name="Password" input-placeholder="Password" v-model:input-value="form.password"
+                    v-model:input-error="form.errors.password" />
                 <button class="btn bg-primary rounded-lg" type="submit" :disabled="form.processing">Login</button>
             </form>
         </div>
@@ -42,6 +32,8 @@
 import { getCSRFCookie, postLoginCredentials } from '../api/auth';
 import { ref } from 'vue';
 import { router, useForm } from '@inertiajs/vue3';
+import TextInput from '../Components/TextInput.vue';
+import PasswordInput from '../Components/PasswordInput.vue';
 
 const form = useForm({
     username: "",
