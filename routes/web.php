@@ -15,6 +15,9 @@ Route::middleware('web')->group(
         Route::get('/login', [AuthController::class, 'loginWeb'])->name('login');
         Route::middleware('auth:sanctum')->group(function () {
             Route::inertia('/surat', 'Surat');
+            Route::inertia('/murid', 'Murid');
+            Route::inertia('/pengguna', 'Pengguna');
+            Route::inertia('/settings', 'Settings');
         });
     }
 );
