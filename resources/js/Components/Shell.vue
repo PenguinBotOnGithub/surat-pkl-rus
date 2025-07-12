@@ -7,13 +7,18 @@
             </div>
             <div class="divider"></div>
             <nav class="flex flex-col justify-stretch text-left">
-                <Link href="/surat" class="p-2 nav-highlight transition-all rounded-md duration-25 cursor-pointer">Surat
+                <Link href="/surat"
+                    :class="[$page.url == '/surat' ? 'active-highlight' : 'nav-highlight', ...navClasses]">
+                Surat
                 </Link>
-                <Link href="/murid" class="p-2 nav-highlight transition-all rounded-md duration-25 cursor-pointer">Murid
+                <Link href="/murid"
+                    :class="[$page.url == '/murid' ? 'active-highlight' : 'nav-highlight', ...navClasses]">Murid
                 </Link>
-                <Link href="/pengguna" class="p-2 nav-highlight transition-all rounded-md duration-25 cursor-pointer">
+                <Link href="/pengguna"
+                    :class="[$page.url == '/pengguna' ? 'active-highlight' : 'nav-highlight', ...navClasses]">
                 Pengguna</Link>
-                <Link href="/settings" class="p-2 nav-highlight transition-all rounded-md duration-25 cursor-pointer">
+                <Link href="/settings"
+                    :class="[$page.url == '/settings' ? 'active-highlight' : 'nav-highlight', ...navClasses]">
                 Settings</Link>
             </nav>
         </div>
@@ -23,8 +28,13 @@
 <script setup lang="js">
 import PklRusLogo from './PklRusLogo.vue';
 import { Link } from '@inertiajs/vue3';
+const navClasses = ["p-2", "transition-all", "rounded-md", "duration-25", "cursor-pointer"];
 </script>
 <style>
+.active-highlight {
+    background-color: color-mix(in oklab, var(--color-base-content)10%, transparent);
+}
+
 .nav-highlight {
     background-color: var(--color-base-200);
 }
