@@ -5,4 +5,7 @@
 </template>
 
 <script setup lang="js">
+import Shell from '../Components/Shell.vue';
+
+defineOptions({ layout: Shell });
 </script>
