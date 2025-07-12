@@ -10,11 +10,11 @@ Route::middleware('web')->group(
             if (!$req->user()) {
                 return redirect('/login');
             }
-            return redirect('/dashboard');
+            return redirect('/surat');
         });
         Route::get('/login', [AuthController::class, 'loginWeb'])->name('login');
         Route::middleware('auth:sanctum')->group(function () {
-            Route::inertia('/dashboard', 'Dashboard');
+            Route::inertia('/surat', 'Surat');
         });
     }
 );

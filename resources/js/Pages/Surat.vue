@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col">
-        <h1>Dashboard</h1>
+        <h1>Surat Page</h1>
     </div>
 </template>
 
