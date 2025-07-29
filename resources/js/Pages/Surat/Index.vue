@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="js">
-import Shell from '../Components/Shell.vue';
+import Shell from '@/Components/Shell.vue';
 import { Link } from '@inertiajs/vue3';
 
 defineOptions({ layout: Shell });
